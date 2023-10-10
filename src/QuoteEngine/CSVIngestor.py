@@ -23,7 +23,6 @@ class CSVIngestor(IngestorInterface):
             
         return quote
 
-    
 
         
         
