@@ -1,3 +1,4 @@
+"""Defines the Meme Quote Model"""
 class QuoteModel():
     def __init__(self, body:str, author:str):
         """New quote model"""

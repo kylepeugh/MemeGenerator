@@ -1,10 +1,10 @@
 from typing import List
 
-from QuoteEngine import IngestorInterface
-from QuoteModel import QuoteModel
+from .IngestorInterface import IngestorInterface
+from .QuoteModel import QuoteModel
 
 class TXTIngestor(IngestorInterface):
-    allowed_extensions = ['txt']
+    allowed_extension = ['txt']
 
     @classmethod
     def parse(cls, path: str) -> List[QuoteModel]:
@@ -21,6 +21,5 @@ class TXTIngestor(IngestorInterface):
                                            parse[1].strip())
                 quote.append(pullled_quote)
         TXT_file.close()
-
         return quote
 

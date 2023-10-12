@@ -1,11 +1,11 @@
 from typing import List
 import pandas
 
-from QuoteEngine import IngestorInterface
-from QuoteModel import QuoteModel
+from .IngestorInterface import IngestorInterface
+from .QuoteModel import QuoteModel
 
 class CSVIngestor(IngestorInterface):
-    allowed_extensions = ['CSV']
+    allowed_extension = ['CSV']
 
     @classmethod
     def parse(cls, path: str) -> List[QuoteModel]:

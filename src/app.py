@@ -1,9 +1,11 @@
+""""""
 import random
 import os
+import requests
 from flask import Flask, render_template, request
 from MemeEngine.MemeEngine import MemeEngine
 from QuoteEngine import Ingestor
-from .meme import generate_meme
+
 # @TODO Import your Ingestor and MemeEngine classes
 
 app = Flask(__name__)
@@ -18,6 +20,8 @@ def setup():
                    './_data/DogQuotes/DogQuotesDOCX.docx',
                    './_data/DogQuotes/DogQuotesPDF.pdf',
                    './_data/DogQuotes/DogQuotesCSV.csv']
+    
+    images_path = "./_data/photos/dog/"
 
     # TODO: Use the Ingestor class to parse all files in the
     # quote_files variable
@@ -26,7 +30,6 @@ def setup():
         quotes.extend(Ingestor.parse(file))
 
 
-    images_path = "./_data/photos/dog/"
 
     # TODO: Use the pythons standard library os class to find all
     # images within the images images_path directory
@@ -71,7 +74,7 @@ def meme_post():
     body = request.form["body"]
     author = request.form["author"]
     image_url = request.form["image_url"]
-    tmp = f'./tmp/{random.randint(0,100000000)}.png'
+    tmp = f'./tmp_{random.randint(0,100000000)}.png'
 
     try:
         img_info = request.get(image_url)

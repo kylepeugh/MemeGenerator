@@ -6,7 +6,7 @@ from QuoteEngine.QuoteModel import QuoteModel
 class DOCXIngestor(IngestorInterface):
     """ Docx file ingestor. Returns a list of quotes. """
 
-    allowed_extensions = ['docx']
+    allowed_extension = ['DOCX']
 
     @classmethod
     def parse(cls, path: str) -> List[QuoteModel]:
