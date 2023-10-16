@@ -1,3 +1,4 @@
+"""This file creates a meme using the Command Line Interface or CLI."""
 import os
 import random
 import argparse
@@ -42,6 +43,7 @@ def generate_meme(path=None, body=None, author=None):
 
 
 if __name__ == "__main__":
+    """Parse CLI arguments."""
     # @TODO Use ArgumentParser to parse the following CLI arguments
     # path - path to an image file
     # body - quote body to add to the image

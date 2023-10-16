@@ -1,3 +1,4 @@
+"""File used to parse PDF files using a strategy object class."""
 from typing import List
 import subprocess
 import os
@@ -7,6 +8,9 @@ from .IngestorInterface import IngestorInterface
 from .QuoteModel import QuoteModel
 
 class PDFIngestor(IngestorInterface):
+    """PDF class object for parsing a PDF file
+    
+    param allowed_extension: File Pathway allowed in this ingestor."""
     allowed_extension = ['pdf']
 
     @classmethod

@@ -1,3 +1,4 @@
+"""File used to parse CSV files using a strategy object class."""
 from typing import List
 import pandas
 
@@ -5,6 +6,9 @@ from .IngestorInterface import IngestorInterface
 from .QuoteModel import QuoteModel
 
 class CSVIngestor(IngestorInterface):
+    """Object class for parsing CSV files
+    
+    param allowed-extensions: File pathway allowed in this ingestor."""
     allowed_extension = ['CSV']
 
     @classmethod

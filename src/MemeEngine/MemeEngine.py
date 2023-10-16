@@ -1,9 +1,10 @@
-
-
+"""File Reponsible for placing quotes onto images."""
 from PIL import Image, ImageDraw, ImageFont
 import random
+import os
 
 class MemeEngine:
+    """"This class is responsible placing a quote on an image."""
     def __init__(self, output_dir):
         self.output_dir = output_dir
     
@@ -22,8 +23,8 @@ class MemeEngine:
                 draw.text((10, 30), text, font=font, fill='white')
                 draw.text((10, 50), author, font=font, fill='white')
 
-
-            location = img.save(f'./{random.radiant(0,100000)}.jpg')
+                location = img.save(f'./{random.radiant(0,100000)}.jpg')
+                
             return location
 
 

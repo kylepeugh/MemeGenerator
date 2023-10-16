@@ -1,4 +1,4 @@
-""""""
+"""Generates memes using a web based App"""
 import random
 import os
 import requests
@@ -29,7 +29,8 @@ def setup():
     for file in quote_files:
         quotes.extend(Ingestor.parse(file))
 
-
+    if not quotes:
+        raise Exception("Error1")
 
     # TODO: Use the pythons standard library os class to find all
     # images within the images images_path directory
