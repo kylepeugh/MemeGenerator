@@ -9,18 +9,16 @@ class CSVIngestor(IngestorInterface):
     """Object class for parsing CSV files
     
     param allowed-extensions: File pathway allowed in this ingestor."""
-    allowed_extension = ['CSV']
+    allowed_extension = ['csv']
 
     @classmethod
     def parse(cls, path: str) -> List[QuoteModel]:
-        if not cls.can_ingest(path):
-            raise Exception('Cannot ingest exception')
-        
+        #if not cls.can_ingest(path):
+            #raise Exception('Cannot ingest')
         quote = []
-
         dataframe = pandas.read_csv(path, header =0)
 
-        for row in dataframe.iterrows:
+        for index, row in dataframe.iterrows():
             pulled_quote = QuoteModel(body=row['body'],
                                       author=row['author'])
             quote.append(pulled_quote)

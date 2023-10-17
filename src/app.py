@@ -18,9 +18,8 @@ def setup():
 
     quote_files = ['./_data/DogQuotes/DogQuotesTXT.txt',
                    './_data/DogQuotes/DogQuotesDOCX.docx',
-                   './_data/DogQuotes/DogQuotesPDF.pdf',
                    './_data/DogQuotes/DogQuotesCSV.csv']
-    
+    #'./_data/DogQuotes/DogQuotesPDF.pdf',
     images_path = "./_data/photos/dog/"
 
     # TODO: Use the Ingestor class to parse all files in the

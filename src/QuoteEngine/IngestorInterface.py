@@ -10,7 +10,7 @@ class IngestorInterface(ABC):
     @classmethod
     def can_ingest(cls, path) -> bool:
         """Validates whether a class can be ingested and parsed"""
-        ext = path.split(',')[-1]
+        ext = path.split('.')[-1]
         return ext in cls.allowed_extension
     
     @classmethod

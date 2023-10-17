@@ -6,7 +6,7 @@ from .QuoteModel import QuoteModel
 class TXTIngestor(IngestorInterface):
     """Object class for parsing TXT files.
     
-    param allowed-extensions: File pathway allowed in this ingestor."""
+    param allowed-extension: File pathway allowed in this ingestor."""
     allowed_extension = ['txt']
 
     @classmethod
@@ -25,4 +25,3 @@ class TXTIngestor(IngestorInterface):
                 quote.append(pullled_quote)
         TXT_file.close()
         return quote
-

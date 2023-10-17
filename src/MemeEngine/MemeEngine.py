@@ -19,7 +19,7 @@ class MemeEngine:
  
             if text and author is not None:
                 draw = ImageDraw.Draw(img)
-                font = ImageFont.truetype('./fonts/LilitaOne-Regular.ttf', size=24)
+                font = ImageFont.truetype('./font/LilitaOne-Regular.ttf', size=24)
                 draw.text((10, 30), text, font=font, fill='white')
                 draw.text((10, 50), author, font=font, fill='white')
 
