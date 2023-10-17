@@ -71,19 +71,19 @@ def meme_post():
     # @TODO:
     # 1. Use requests to save the image from the image_url
     #    form param to a temp local file.
+    image_url = request.form["image_url"]
     body = request.form["body"]
     author = request.form["author"]
-    image_url = request.form["image_url"]
-    tmp = f'./tmp_{random.randint(0,100000000)}.png'
+    tmp = f'/src/tmp/{random.randint(0,100000000)}.png'
 
     try:
-        img_info = request.get(image_url)
+        img_info = requests.get(image_url)
         with open(tmp, 'wb') as img:
             img.write(img_info.content)
     except Exception as error:
         print(error)
 
-    path = meme.make_meme('', body, author)
+    path = meme.make_meme(tmp, body, author)
 
     os.remove(tmp)
     # 2. Use the meme object to generate a meme using this temp

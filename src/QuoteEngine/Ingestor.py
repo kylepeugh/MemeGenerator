@@ -16,18 +16,7 @@ class Ingestor(IngestorInterface):
 
     @classmethod
     def parse(cls, path: str) -> List[QuoteModel]:
-        if not cls.can_ingest(path):
-            raise Exception('cannot ingest exception')
-        
-        quote = []
-        TXT_file = open(path, 'r')
-        
-        for line in TXT_file:
-            if line is not None:
-                parse = line.split('-')
-                pullled_quote = QuoteModel(parse[0].strip(),
-                                           parse[1].strip())
-                quote.append(pullled_quote)
-        TXT_file.close()
-        return quote
+        for ingestor in cls.ingestors:
+            if ingestor.can_ingest(path):
+                return ingestor.parse(path)
         
