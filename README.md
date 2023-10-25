@@ -91,7 +91,7 @@ Here is a list of the modules contained within the QuoteEngine and a brief expla
 
  Ingestor.py: Realizes the IngestorInterface.py and encapsulates the file ingestor classes listed above.
  
- IngestorInterface.py: Reponsible for creating a abstract base class and defines two methods. Can_ingest method validates whether the file can be ingested. if it can be ingested, it will be used in file ingestors to parse the quote.
+ IngestorInterface.py: Reponsible for creating a abstract base class and defines two methods(Can_ingest and Parse). Can_ingest method validates whether the file can be ingested.Parse method creates a file pathway to the file ingestors to parse and return a quote.
 
  QuoteModel: Responsible for creating a blank template for the quotes to be extracted. 
 
