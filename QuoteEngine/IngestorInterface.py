@@ -18,5 +18,5 @@ class IngestorInterface(ABC):
     @classmethod
     @abstractmethod
     def parse(cls, path: str) -> List[QuoteModel]:
-        """Create abstract method."""
+        """Create ingest pathway and returns a quote to QuoteModel."""
         pass
