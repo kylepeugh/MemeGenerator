@@ -61,15 +61,19 @@ def meme_post():
     body = request.form["body"]
     author = request.form["author"]
 
-    r = requests.get(image_url)
-    tmp = f'./static/{random.randint(0,100000000)}.jpg'
-    with open(tmp, 'wb') as img:
-        img.write(r.content)
-        path = meme.make_meme(tmp, body, author)
+    try:
+        r = requests.get(image_url)
+        tmp = f'./static/{random.randint(0,100000000)}.jpg'
+        with open(tmp, 'wb') as img:
+            img.write(r.content)
+            path = meme.make_meme(tmp, body, author)
+        os.remove(tmp)
+        return render_template('meme.html', path=path)
 
-    os.remove(tmp)
-
-    return render_template('meme.html', path=path)
+    except Exception as er:
+        requests.exceptions.ConnectionError
+        print("Invalid URL. Please try again.")
+        return render_template("meme_form.html")
 
 
 if __name__ == "__main__":
